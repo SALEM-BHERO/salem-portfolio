@@ -4,19 +4,19 @@ const Projects = () => {
   return (
     <section id="projects">
       <div className="container">
-        <h2>Projects</h2>
+        <h2>Featured Projects</h2>
         <div className="project-grid">
           <div className="card">
             <h3>Muonde Digital Agency</h3>
-            <p>A digital agency platform designed to present services professionally and support client engagement through a clean and modern web presence.</p>
+            <p>A comprehensive digital agency platform designed to showcase services professionally and facilitate client engagement through a modern, responsive web presence.</p>
           </div>
           <div className="card">
             <h3>Destiny Driven – Financial Services Platform</h3>
-            <p>A web platform focused on bank loans and financial services, emphasizing trust, clarity, and structured information delivery.</p>
+            <p>A specialized web platform for financial services, focusing on bank loans and investment opportunities with emphasis on trust, transparency, and structured information delivery.</p>
           </div>
           <div className="card">
-            <h3>Murimi Digital</h3>
-            <p>An agriculture-focused application aimed at detecting crop diseases using artificial intelligence, supporting farmers through data-driven insights and technology.</p>
+            <h3>Murimi Digital – AI Agriculture Application</h3>
+            <p>An innovative agriculture-focused application utilizing artificial intelligence to detect crop diseases, providing farmers with data-driven insights and technology-based solutions for improved yields.</p>
           </div>
         </div>
       </div>

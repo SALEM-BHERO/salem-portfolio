@@ -11,20 +11,20 @@ const About = () => {
             <div>
               <h3>Salem Gwashavanhu</h3>
               <p style={{ marginBottom: 'var(--spacing-sm)' }}>E-commerce Student & Digital Solutions Developer</p>
-              <p style={{ marginBottom: 0 }}>Zimbabwe</p>
+              <p style={{ marginBottom: 0 }}>Based in Zimbabwe</p>
             </div>
           </div>
-          <p>Salem Gwashavanhu is an e-commerce and business enthusiast with Zimbabwean roots. His interests lie in the digital space, where technology meets business growth and innovation. He is particularly interested in how digital platforms can transform commerce, finance, agriculture, and real estate.</p>
-          <p>With an academic foundation in computer-related studies and business subjects, Salem approaches development with both technical understanding and business awareness.</p>
+          <p>As an e-commerce student and digital solutions developer, I'm passionate about bridging the gap between technology and business. My journey in tech began with a curiosity about how digital platforms can transform traditional business models.</p>
+          <p>With a foundation in computer science and business studies, I approach development with both technical understanding and business awareness. I specialize in creating solutions that are not just technically sound, but also solve real-world business problems.</p>
         </div>
 
         <h3>Education</h3>
         <div className="card">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--spacing-md)' }}>
-            <h4 style={{ margin: 0 }}>A-Level Education</h4>
-            <span style={{ color: 'var(--accent-cyan)', fontWeight: 'var(--font-weight-semibold)' }}>Marlborough High School</span>
+            <h4 style={{ margin: 0 }}>Advanced Level (A-Level)</h4>
+            <span style={{ color: 'var(--accent-purple)', fontWeight: 'var(--font-weight-semibold)' }}>Marlborough High School</span>
           </div>
-          <p>Passes in:</p>
+          <p>Specialized in:</p>
           <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 'var(--spacing-sm)' }}>
             <li>Accounting</li>
             <li>Computer Science</li>
@@ -32,35 +32,35 @@ const About = () => {
           </ul>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: 'var(--spacing-lg) 0 var(--spacing-md)' }}>
-            <h4 style={{ margin: 0 }}>O-Level Education</h4>
-            <span style={{ color: 'var(--accent-cyan)', fontWeight: 'var(--font-weight-semibold)' }}>Mandedza</span>
+            <h4 style={{ margin: 0 }}>Ordinary Level (O-Level)</h4>
+            <span style={{ color: 'var(--accent-purple)', fontWeight: 'var(--font-weight-semibold)' }}>Mandedza</span>
           </div>
-          <p>Subjects include English and Mathematics</p>
+          <p>Core subjects including English and Mathematics</p>
 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', margin: 'var(--spacing-lg) 0 var(--spacing-md)' }}>
             <h4 style={{ margin: 0 }}>Professional Certification</h4>
-            <span style={{ color: 'var(--accent-cyan)', fontWeight: 'var(--font-weight-semibold)' }}>HEXCO</span>
+            <span style={{ color: 'var(--accent-purple)', fontWeight: 'var(--font-weight-semibold)' }}>HEXCO</span>
           </div>
           <p>Computer Operations and Packages</p>
         </div>
 
-        <h3>Key Focus Areas</h3>
+        <h3>Core Expertise</h3>
         <div className="project-grid">
           <div className="card">
-            <h4>E-commerce systems</h4>
-            <p>Building and optimizing online stores and digital marketplaces</p>
+            <h4>E-commerce Systems</h4>
+            <p>Developing and optimizing online stores and digital marketplaces with focus on user experience and conversion</p>
           </div>
           <div className="card">
-            <h4>Web and application development</h4>
-            <p>Creating responsive, user-friendly digital experiences</p>
+            <h4>Web & Application Development</h4>
+            <p>Creating responsive, user-friendly digital experiences with modern technologies and best practices</p>
           </div>
           <div className="card">
-            <h4>Digital business solutions</h4>
-            <p>Implementing technology to improve business operations</p>
+            <h4>Digital Business Solutions</h4>
+            <p>Implementing technology solutions to improve business operations and enhance digital presence</p>
           </div>
           <div className="card">
-            <h4>Technology in real estate</h4>
-            <p>Exploring digital platforms for property transactions</p>
+            <h4>Technology in Real Estate</h4>
+            <p>Exploring digital platforms and tools to modernize property transactions and management</p>
           </div>
         </div>
       </div>

@@ -16,8 +16,8 @@ const Newsletter = () => {
     <section id="newsletter" className="newsletter-section">
       <div className="container">
         <div className="newsletter-card">
-          <h2>Stay Updated</h2>
-          <p>Subscribe to my newsletter to receive updates on my latest projects and insights on e-commerce and digital solutions.</p>
+          <h2>Stay Connected</h2>
+          <p>Join my newsletter to receive updates on my latest projects, insights on e-commerce development, and thoughts on technology in emerging markets.</p>
           
           {subscribed ? (
             <div className="success-message">

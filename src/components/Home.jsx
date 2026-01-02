@@ -7,10 +7,10 @@ const Home = () => {
         <img src="/src/assets/images/profile.jpg" alt="Salem Gwashavanhu" className="profile-img" />
         <h1>Salem Gwashavanhu</h1>
         <h2>E-Commerce Student & Digital Solutions Developer</h2>
-        <p>"Focused on building practical digital products that support online business and innovation."</p>
+        <p>Passionate about building practical digital products that support online business and innovation.</p>
         <div className="btn-group">
-          <Link to="/contact" className="btn">Contact Me</Link>
-          <Link to="/projects" className="btn btn-secondary">View Projects</Link>
+          <Link to="/contact" className="btn">Get In Touch</Link>
+          <Link to="/projects" className="btn btn-secondary">View My Work</Link>
         </div>
       </div>
     </section>
