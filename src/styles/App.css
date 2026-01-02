@@ -1,26 +1,26 @@
-/* Dark-themed, tech-oriented design */
+/* Dark-themed, tech-oriented design with specified color palette */
 :root {
-  /* Dark base colors */
-  --bg-primary: #121212;
-  --bg-secondary: #1e1e1e;
-  --bg-tertiary: #2d2d2d;
+  /* Primary Background - Deep Charcoal / Near Black */
+  --bg-primary: #121212; /* Very dark gray for main background */
+  --bg-secondary: #1a1a1a; /* Slightly lighter for cards and sections */
+  --bg-tertiary: #262626; /* For special sections */
   
-  /* Text colors */
-  --text-primary: #ffffff;
-  --text-secondary: #b3b3b3;
-  --text-tertiary: #8a8a8a;
+  /* Primary Accent - Electric Blue (signature color) */
+  --accent-blue: #007bff; /* Trust, technology, intelligence */
+  --accent-blue-hover: #00aaff; /* Lighter blue for hover states */
   
-  /* Accent colors (blue, purple, cyan as specified in requirements) */
-  --accent-blue: #0077cc;
-  --accent-purple: #9d4edd;
-  --accent-cyan: #00bcd4;
-  --accent-blue-hover: #0099ff;
-  --accent-purple-hover: #b66dff;
-  --accent-cyan-hover: #00e4ff;
+  /* Secondary Accent - Soft Purple / Indigo */
+  --accent-purple: #6f42c1; /* Innovation, creativity, future thinking */
+  --accent-purple-hover: #8a5fc7; /* For hover effects */
+  
+  /* Supporting Colors */
+  --text-primary: #f8f9fa; /* Off-white for main text - easier on eyes */
+  --text-secondary: #adb5bd; /* Muted gray for secondary text */
+  --text-tertiary: #6c757d; /* For metadata, dates, captions */
   
   /* Other colors */
-  --border-color: #444444;
-  --shadow: rgba(0, 0, 0, 0.5);
+  --border-color: #343a40; /* Darker border for contrast */
+  --shadow: rgba(0, 0, 0, 0.6); /* Darker shadow for depth */
   
   /* Spacing */
   --spacing-xs: 0.5rem;
@@ -67,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   font-weight: var(--font-weight-bold);
   text-align: left;
+  color: var(--accent-blue); /* Primary accent for headings */
 }
 
 h1 {
@@ -79,15 +80,27 @@ h2 {
 
 h3 {
   font-size: var(--font-size-2xl);
+  color: var(--accent-purple); /* Secondary accent for subheadings */
 }
 
 h4 {
   font-size: var(--font-size-xl);
+  color: var(--accent-purple); /* Secondary accent for subheadings */
 }
 
 p {
   margin: 0 0 var(--spacing-md) 0;
   text-align: left;
+  color: var(--text-primary); /* Off-white for body text */
+}
+
+/* Secondary text */
+.text-secondary {
+  color: var(--text-secondary) !important; /* Muted gray for secondary text */
+}
+
+.text-tertiary {
+  color: var(--text-tertiary) !important; /* Muted gray for metadata */
 }
 
 a {
@@ -149,20 +162,20 @@ a:hover {
 }
 
 .btn-cyan {
-  background-color: var(--accent-cyan);
+  background-color: var(--accent-purple); /* Using purple as cyan was not in spec */
 }
 
 .btn-cyan:hover {
-  background-color: var(--accent-cyan-hover);
+  background-color: var(--accent-purple-hover);
 }
 
 .btn-subscribe {
-  background-color: var(--accent-cyan);
+  background-color: var(--accent-purple); /* Using purple instead of cyan */
   padding: var(--spacing-sm) var(--spacing-md);
 }
 
 .btn-subscribe:hover {
-  background-color: var(--accent-cyan-hover);
+  background-color: var(--accent-purple-hover);
 }
 
 /* Card styles */
@@ -172,6 +185,7 @@ a:hover {
   padding: var(--spacing-lg);
   box-shadow: 0 4px 6px var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--border-color);
 }
 
 .card:hover {
@@ -193,9 +207,10 @@ nav {
   padding: var(--spacing-md) 0;
   position: sticky;
   top: 0;
-  background-color: rgba(18, 18, 18, 0.95);
+  background-color: rgba(18, 18, 18, 0.95); /* Deep charcoal with transparency */
   backdrop-filter: blur(10px);
   z-index: 100;
+  border-bottom: 1px solid var(--border-color); /* Muted gray border */
 }
 
 .nav-container {
@@ -207,7 +222,7 @@ nav {
 .nav-logo {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--text-primary);
+  color: var(--accent-blue); /* Electric blue for logo */
 }
 
 .nav-menu {
@@ -219,7 +234,7 @@ nav {
 }
 
 .nav-link {
-  color: var(--text-primary);
+  color: var(--text-primary); /* Off-white for nav links */
   text-decoration: none;
   font-weight: var(--font-weight-medium);
   transition: color 0.3s ease;
@@ -227,7 +242,7 @@ nav {
 }
 
 .nav-link:hover {
-  color: var(--accent-blue);
+  color: var(--accent-blue); /* Electric blue on hover */
 }
 
 .nav-link::after {
@@ -237,7 +252,7 @@ nav {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--accent-blue);
+  background-color: var(--accent-purple); /* Soft purple for hover effect */
   transition: width 0.3s ease;
 }
 
@@ -275,19 +290,21 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at top right, rgba(0, 188, 212, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at bottom left, rgba(157, 78, 221, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at top right, rgba(111, 66, 193, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at bottom left, rgba(0, 123, 255, 0.1) 0%, transparent 50%);
   z-index: -1;
 }
 
 .hero h1 {
   margin-bottom: var(--spacing-md);
   text-align: center;
+  color: var(--accent-blue); /* Electric blue for main heading */
 }
 
 .hero h2 {
   margin-bottom: var(--spacing-md);
   text-align: center;
+  color: var(--text-primary); /* Off-white for subheading */
 }
 
 .hero p {
@@ -295,6 +312,7 @@ nav {
   max-width: 700px;
   margin-bottom: var(--spacing-xl);
   text-align: center;
+  color: var(--text-secondary); /* Muted gray for hero text */
 }
 
 /* Button group */
@@ -360,9 +378,9 @@ nav {
 .success-message {
   text-align: center;
   padding: var(--spacing-lg);
-  background-color: rgba(0, 188, 212, 0.1);
+  background-color: rgba(111, 66, 193, 0.1); /* Soft purple background */
   border-radius: 8px;
-  border: 1px solid var(--accent-cyan);
+  border: 1px solid var(--accent-purple);
 }
 
 /* Profile image styling */
@@ -371,7 +389,7 @@ nav {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--accent-blue);
+  border: 3px solid var(--accent-blue); /* Electric blue border */
   margin-bottom: var(--spacing-md);
   box-shadow: 0 8px 20px var(--shadow);
 }
