@@ -4,39 +4,73 @@ const Resume = () => {
   return (
     <section id="resume">
       <div className="container">
-        <h2>Professional Profile</h2>
+        <h2>Professional Experience</h2>
         <div className="card">
-          <h3>Professional Summary</h3>
-          <p>E-commerce student and digital solutions developer with a passion for creating practical digital products that support online business and innovation. Combines technical expertise with business acumen to deliver solutions that drive real value.</p>
+          <h3>Summary</h3>
+          <p>E-commerce specialist and digital solutions developer with expertise in creating technology solutions that bridge business needs and technical capabilities. Combines technical expertise with strategic business thinking to deliver products that drive real value.</p>
           
           <h3>Core Competencies</h3>
-          <ul>
-            <li>Full-stack web and application development</li>
-            <li>E-commerce platform development and optimization</li>
-            <li>Digital business strategy and implementation</li>
-            <li>Technology solutions for emerging markets</li>
-            <li>Real estate technology applications</li>
-          </ul>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--spacing-md)' }}>
+            <div>
+              <h4>Technical Skills</h4>
+              <ul>
+                <li>Full-stack Web Development</li>
+                <li>E-commerce Platform Development</li>
+                <li>API Development & Integration</li>
+                <li>Database Design & Management</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Business Skills</h4>
+              <ul>
+                <li>Digital Strategy</li>
+                <li>Project Management</li>
+                <li>Business Process Analysis</li>
+                <li>Client Relationship Management</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Specializations</h4>
+              <ul>
+                <li>Emerging Markets Solutions</li>
+                <li>User Experience Design</li>
+                <li>Conversion Optimization</li>
+                <li>Technology Consulting</li>
+              </ul>
+            </div>
+          </div>
           
-          <h3>Educational Background</h3>
-          <ul>
-            <li><strong>Advanced Level (A-Level):</strong> Marlborough High School (Accounting, Computer Science, Business Studies)</li>
-            <li><strong>Ordinary Level (O-Level):</strong> Mandedza (English, Mathematics)</li>
-            <li><strong>Professional Certification:</strong> Computer Operations and Packages – HEXCO</li>
-          </ul>
+          <h3>Education</h3>
+          <div style={{ marginBottom: 'var(--spacing-md)' }}>
+            <h4>Advanced Level (A-Level)</h4>
+            <p style={{ color: 'var(--accent-green)', fontWeight: 'var(--font-weight-semibold)', marginBottom: 'var(--spacing-sm)' }}>Marlborough High School</p>
+            <p>Specialized in: Accounting, Computer Science, Business Studies</p>
+          </div>
           
-          <h3>Project Experience</h3>
+          <div style={{ marginBottom: 'var(--spacing-md)' }}>
+            <h4>Ordinary Level (O-Level)</h4>
+            <p style={{ color: 'var(--accent-green)', fontWeight: 'var(--font-weight-semibold)', marginBottom: 'var(--spacing-sm)' }}>Mandedza</p>
+            <p>Core subjects including English and Mathematics</p>
+          </div>
+          
+          <div>
+            <h4>Professional Certification</h4>
+            <p style={{ color: 'var(--accent-green)', fontWeight: 'var(--font-weight-semibold)', marginBottom: 'var(--spacing-sm)' }}>HEXCO</p>
+            <p>Computer Operations and Packages</p>
+          </div>
+          
+          <h3>Notable Projects</h3>
           <ul>
-            <li>Muonde Digital Agency Platform</li>
-            <li>Destiny Driven Financial Services Platform</li>
-            <li>Murimi Digital AI Agriculture Application</li>
+            <li>Muonde Digital Agency Platform - Comprehensive digital agency solution</li>
+            <li>Destiny Driven Financial Services Platform - Trustworthy financial services platform</li>
+            <li>Murimi Digital AI Agriculture Application - AI-powered crop disease detection</li>
           </ul>
           
           <h3>Career Focus</h3>
-          <p>Seeking opportunities to contribute to innovative e-commerce and digital solutions that make a meaningful impact in emerging markets. Open to collaborations, internships, and freelance opportunities.</p>
+          <p>Specializing in e-commerce and digital solutions with a focus on emerging markets. Seeking opportunities to contribute to innovative projects that make a meaningful impact in the digital transformation space.</p>
           
           <div className="btn-group" style={{marginTop: 'var(--spacing-lg)'}}>
-            <a href="#" className="btn btn-purple">Download CV</a>
+            <a href="#" className="btn btn-green">Download Full Resume</a>
           </div>
         </div>
       </div>

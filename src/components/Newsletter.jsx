@@ -16,20 +16,20 @@ const Newsletter = () => {
     <section id="newsletter" className="newsletter-section">
       <div className="container">
         <div className="newsletter-card">
-          <h2>Stay Connected</h2>
-          <p>Join my newsletter to receive updates on my latest projects, insights on e-commerce development, and thoughts on technology in emerging markets.</p>
+          <h2>Stay Informed</h2>
+          <p>Subscribe to receive insights on e-commerce development, digital transformation strategies, and technology trends in emerging markets.</p>
           
           {subscribed ? (
             <div className="success-message">
               <h3>Thank you for subscribing!</h3>
-              <p>You'll receive the next update soon.</p>
+              <p>You'll receive the next insight soon.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="newsletter-form">
               <div className="input-group">
                 <input
                   type="email"
-                  placeholder="Enter your email address"
+                  placeholder="Enter your professional email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required

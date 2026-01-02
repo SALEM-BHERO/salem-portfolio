@@ -13,7 +13,7 @@ const Contact = () => {
           
           <div className="btn-group" style={{marginTop: 'var(--spacing-lg)'}}>
             <a href="mailto:sgwashavanhu55@gmail.com" className="btn">Send Email</a>
-            <a href="https://linkedin.com/in/salem-gwashavanhu" target="_blank" rel="noopener noreferrer" className="btn btn-purple">Connect on LinkedIn</a>
+            <a href="https://linkedin.com/in/salem-gwashavanhu" target="_blank" rel="noopener noreferrer" className="btn btn-green">Connect on LinkedIn</a>
           </div>
         </div>
       </div>

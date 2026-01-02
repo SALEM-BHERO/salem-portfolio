@@ -5,13 +5,13 @@
   --bg-secondary: #1a1a1a; /* Slightly lighter for cards and sections */
   --bg-tertiary: #262626; /* For special sections */
   
-  /* Primary Accent - Electric Blue (signature color) */
+  /* Primary Accent - Electric Blue */
   --accent-blue: #007bff; /* Trust, technology, intelligence */
   --accent-blue-hover: #00aaff; /* Lighter blue for hover states */
   
-  /* Secondary Accent - Soft Purple / Indigo */
-  --accent-purple: #6f42c1; /* Innovation, creativity, future thinking */
-  --accent-purple-hover: #8a5fc7; /* For hover effects */
+  /* NEW ACCENT COLOR - Light Green instead of purple */
+  --accent-green: #4CAF50; /* Fresh, modern light green */
+  --accent-green-hover: #66BB6A; /* Lighter green for hover effects */
   
   /* Supporting Colors */
   --text-primary: #f8f9fa; /* Off-white for main text - easier on eyes */
@@ -30,8 +30,9 @@
   --spacing-xl: 3rem;
   --spacing-xxl: 4rem;
   
-  /* Typography */
-  --font-primary: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* NEW FONTS - More attractive typography */
+  --font-primary: 'Inter', 'Poppins', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Poppins', 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -66,32 +67,44 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 var(--spacing-sm) 0;
   line-height: 1.2;
   font-weight: var(--font-weight-bold);
+  font-family: var(--font-heading);
   text-align: left;
   color: var(--accent-blue); /* Primary accent for headings */
 }
 
-h1 {
-  font-size: var(--font-size-4xl);
+/* Improved text alignment for better readability */
+h1, h2 {
+  text-align: left;
+  width: 100%;
 }
 
-h2 {
-  font-size: var(--font-size-3xl);
-}
-
-h3 {
-  font-size: var(--font-size-2xl);
-  color: var(--accent-purple); /* Secondary accent for subheadings */
-}
-
-h4 {
-  font-size: var(--font-size-xl);
-  color: var(--accent-purple); /* Secondary accent for subheadings */
+h3, h4 {
+  text-align: left;
+  color: var(--accent-green); /* NEW: Using light green instead of purple */
 }
 
 p {
   margin: 0 0 var(--spacing-md) 0;
   text-align: left;
   color: var(--text-primary); /* Off-white for body text */
+  line-height: 1.7; /* Better readability */
+}
+
+/* Centered text alignment for hero section */
+.hero p {
+  text-align: left;
+}
+
+/* Better alignment for section headers */
+section h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Better alignment for card content */
+.card h3, .card h4 {
+  text-align: left;
+  margin-top: 0;
 }
 
 /* Secondary text */
@@ -130,6 +143,7 @@ a:hover {
   border-radius: 4px;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
+  font-family: var(--font-primary);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   text-decoration: none;
@@ -153,29 +167,29 @@ a:hover {
   color: white;
 }
 
-.btn-purple {
-  background-color: var(--accent-purple);
+.btn-green {
+  background-color: var(--accent-green); /* NEW: Using green instead of purple */
 }
 
-.btn-purple:hover {
-  background-color: var(--accent-purple-hover);
+.btn-green:hover {
+  background-color: var(--accent-green-hover);
 }
 
 .btn-cyan {
-  background-color: var(--accent-purple); /* Using purple as cyan was not in spec */
+  background-color: var(--accent-green); /* NEW: Using green instead of cyan/purple */
 }
 
 .btn-cyan:hover {
-  background-color: var(--accent-purple-hover);
+  background-color: var(--accent-green-hover);
 }
 
 .btn-subscribe {
-  background-color: var(--accent-purple); /* Using purple instead of cyan */
+  background-color: var(--accent-green); /* NEW: Using green instead of purple */
   padding: var(--spacing-sm) var(--spacing-md);
 }
 
 .btn-subscribe:hover {
-  background-color: var(--accent-purple-hover);
+  background-color: var(--accent-green-hover);
 }
 
 /* Card styles */
@@ -222,6 +236,7 @@ nav {
 .nav-logo {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
+  font-family: var(--font-heading);
   color: var(--accent-blue); /* Electric blue for logo */
 }
 
@@ -237,6 +252,7 @@ nav {
   color: var(--text-primary); /* Off-white for nav links */
   text-decoration: none;
   font-weight: var(--font-weight-medium);
+  font-family: var(--font-primary);
   transition: color 0.3s ease;
   position: relative;
 }
@@ -252,7 +268,7 @@ nav {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--accent-purple); /* Soft purple for hover effect */
+  background-color: var(--accent-green); /* NEW: Using green for hover effect */
   transition: width 0.3s ease;
 }
 
@@ -275,7 +291,6 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   min-height: 80vh;
   padding: var(--spacing-xxl) 0;
   position: relative;
@@ -290,28 +305,50 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at top right, rgba(111, 66, 193, 0.1) 0%, transparent 50%),
+  background: radial-gradient(circle at top right, rgba(76, 175, 80, 0.1) 0%, transparent 50%), /* NEW: Using green in gradient */
               radial-gradient(circle at bottom left, rgba(0, 123, 255, 0.1) 0%, transparent 50%);
   z-index: -1;
 }
 
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+  width: 100%;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.hero-image {
+  flex: 0 0 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .hero h1 {
-  margin-bottom: var(--spacing-md);
-  text-align: center;
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-sm);
+  text-align: left;
   color: var(--accent-blue); /* Electric blue for main heading */
 }
 
 .hero h2 {
+  font-size: var(--font-size-xl);
   margin-bottom: var(--spacing-md);
-  text-align: center;
-  color: var(--text-primary); /* Off-white for subheading */
+  text-align: left;
+  color: var(--text-secondary); /* Muted gray for subheading */
+  font-weight: var(--font-weight-medium);
 }
 
 .hero p {
   font-size: var(--font-size-lg);
-  max-width: 700px;
   margin-bottom: var(--spacing-xl);
-  text-align: center;
+  text-align: left;
   color: var(--text-secondary); /* Muted gray for hero text */
 }
 
@@ -319,7 +356,7 @@ nav {
 .btn-group {
   display: flex;
   gap: var(--spacing-md);
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -368,6 +405,7 @@ nav {
   background-color: var(--bg-secondary);
   color: var(--text-primary);
   font-size: var(--font-size-base);
+  font-family: var(--font-primary);
 }
 
 .email-input:focus {
@@ -378,19 +416,19 @@ nav {
 .success-message {
   text-align: center;
   padding: var(--spacing-lg);
-  background-color: rgba(111, 66, 193, 0.1); /* Soft purple background */
+  background-color: rgba(76, 175, 80, 0.1); /* NEW: Using green background */
   border-radius: 8px;
-  border: 1px solid var(--accent-purple);
+  border: 1px solid var(--accent-green);
 }
 
 /* Profile image styling */
 .profile-img {
-  width: 150px;
-  height: 150px;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent-blue); /* Electric blue border */
-  margin-bottom: var(--spacing-md);
   box-shadow: 0 8px 20px var(--shadow);
 }
 
@@ -428,14 +466,21 @@ nav {
     display: block;
   }
 
-  .btn-group {
+  .hero-content {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
   }
 
-  .btn {
-    width: 100%;
-    max-width: 300px;
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-image {
+    flex: 0 0 auto;
+  }
+
+  .btn-group {
+    justify-content: center;
   }
 
   .input-group {
@@ -451,7 +496,7 @@ nav {
   }
 
   h1 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
   }
 
   h2 {

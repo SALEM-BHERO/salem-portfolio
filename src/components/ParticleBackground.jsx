@@ -46,7 +46,7 @@ const ParticleBackground = () => {
         },
         particles: {
           color: {
-            value: ["#007bff", "#6f42c1"], // Electric blue and soft purple
+            value: ["#007bff", "#4CAF50"], // Electric blue and light green
           },
           links: {
             color: "#343a40", // Muted border color

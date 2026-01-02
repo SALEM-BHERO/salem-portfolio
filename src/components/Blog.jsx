@@ -4,19 +4,41 @@ const Blog = () => {
   return (
     <section id="blog">
       <div className="container">
-        <h2>Insights & Articles</h2>
+        <h2>Insights & Thought Leadership</h2>
         <div className="card">
-          <h3>Topics I Explore:</h3>
-          <ul>
-            <li>E-commerce fundamentals and best practices</li>
-            <li>Digital business strategies for emerging markets</li>
-            <li>Web and application development techniques</li>
-            <li>Technology trends in African markets</li>
-          </ul>
+          <h3>Areas of Expertise:</h3>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 'var(--spacing-md)' }}>
+            <div>
+              <h4>E-commerce Innovation</h4>
+              <p>Exploring the latest trends and strategies in e-commerce development, platform optimization, and customer experience enhancement.</p>
+            </div>
+            <div>
+              <h4>Digital Transformation</h4>
+              <p>Thoughts on how businesses can leverage technology to improve operations, reach new markets, and enhance customer engagement.</p>
+            </div>
+            <div>
+              <h4>Emerging Market Solutions</h4>
+              <p>Insights on developing technology solutions specifically tailored for the unique challenges and opportunities in African markets.</p>
+            </div>
+            <div>
+              <h4>Technology Strategy</h4>
+              <p>Analysis of how businesses can align their technology investments with strategic business objectives for maximum impact.</p>
+            </div>
+          </div>
           
-          <h3>Featured Insight</h3>
-          <h4>"Getting Started with E-Commerce: What Every Beginner Should Know"</h4>
-          <p>Understanding the fundamentals of starting an e-commerce business, from choosing the right platform to understanding your target market in emerging economies.</p>
+          <h3>Featured Insights</h3>
+          <div className="project-grid">
+            <div className="card">
+              <h4>"The Future of E-commerce in Emerging Markets"</h4>
+              <p>An analysis of the opportunities and challenges facing e-commerce platforms in developing economies, with focus on user experience and market-specific solutions.</p>
+              <p className="text-tertiary" style={{ marginBottom: 0 }}>Published: Coming Soon</p>
+            </div>
+            <div className="card">
+              <h4>"Bridging Technology and Business: A Developer's Perspective"</h4>
+              <p>Exploring how technical solutions can be designed to directly address business challenges and create measurable value.</p>
+              <p className="text-tertiary" style={{ marginBottom: 0 }}>Published: Coming Soon</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

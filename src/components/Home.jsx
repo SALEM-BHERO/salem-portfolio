@@ -4,13 +4,19 @@ const Home = () => {
   return (
     <section id="home" className="hero">
       <div className="container">
-        <img src="/src/assets/images/profile.jpg" alt="Salem Gwashavanhu" className="profile-img" />
-        <h1>Salem Gwashavanhu</h1>
-        <h2>E-Commerce Student & Digital Solutions Developer</h2>
-        <p>Passionate about building practical digital products that support online business and innovation.</p>
-        <div className="btn-group">
-          <Link to="/contact" className="btn">Get In Touch</Link>
-          <Link to="/projects" className="btn btn-secondary">View My Work</Link>
+        <div className="hero-content">
+          <div className="hero-text">
+            <h2>Hi, I'm Salem Gwashavanhu</h2>
+            <h1>E-Commerce & Digital Solutions Developer</h1>
+            <p>I build scalable digital products that bridge technology and business needs. With expertise in e-commerce platforms and business-oriented solutions, I help transform ideas into impactful digital experiences.</p>
+            <div className="btn-group">
+              <Link to="/contact" className="btn">Start a Project</Link>
+              <Link to="/projects" className="btn btn-secondary">View Case Studies</Link>
+            </div>
+          </div>
+          <div className="hero-image">
+            <img src="/src/assets/images/profile.jpg" alt="Salem Gwashavanhu" className="profile-img" />
+          </div>
         </div>
       </div>
     </section>

@@ -8,19 +8,23 @@ const Services = () => {
         <div className="project-grid">
           <div className="card">
             <h3>Digital Solutions Development</h3>
-            <p>I design and develop modern digital products tailored to your specific business needs. From concept to deployment, I create solutions that are both technically robust and user-friendly.</p>
+            <p><strong>Overview:</strong> Custom digital product development tailored to specific business requirements. From concept to deployment, I create solutions that are both technically robust and strategically aligned with business goals.</p>
+            <p><strong>Deliverables:</strong> Full-cycle development, testing, deployment, and maintenance.</p>
           </div>
           <div className="card">
-            <h3>Web Development</h3>
-            <p>Creating responsive, performance-focused websites that work seamlessly across all devices. I focus on clean code, usability, and scalability to ensure your digital presence stands out.</p>
+            <h3>E-Commerce Platform Development</h3>
+            <p><strong>Overview:</strong> Comprehensive e-commerce solutions including platform selection, customization, and optimization. Focus on user experience, conversion optimization, and scalable architecture.</p>
+            <p><strong>Deliverables:</strong> Complete online stores, payment integration, inventory management, and analytics setup.</p>
           </div>
           <div className="card">
-            <h3>E-Commerce Support</h3>
-            <p>From setting up online stores to optimizing existing platforms, I provide comprehensive support for e-commerce businesses looking to establish or enhance their digital sales channels.</p>
+            <h3>Business Technology Consulting</h3>
+            <p><strong>Overview:</strong> Strategic technology guidance to improve business operations and enhance digital presence. Analysis of current systems and recommendations for technology adoption.</p>
+            <p><strong>Deliverables:</strong> Technology assessments, strategic recommendations, implementation roadmaps.</p>
           </div>
           <div className="card">
-            <h3>Business-Oriented Technology</h3>
-            <p>I help businesses leverage technology to improve operations, increase efficiency, and enhance their digital presence. My approach focuses on practical solutions that drive real business value.</p>
+            <h3>Web & Application Development</h3>
+            <p><strong>Overview:</strong> Responsive, performance-focused websites and applications built with modern technologies. Emphasis on usability, scalability, and security best practices.</p>
+            <p><strong>Deliverables:</strong> Custom web applications, responsive websites, API development, and integration services.</p>
           </div>
         </div>
       </div>
