@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+/dist
+/build
+/.vite
+
+# Environment variables
+.env*
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Production build (if you create one)
+/dist

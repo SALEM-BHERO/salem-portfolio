@@ -1,0 +1,319 @@
+/* Dark-themed, tech-oriented design */
+:root {
+  /* Dark base colors */
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2d2d2d;
+  
+  /* Text colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-tertiary: #8a8a8a;
+  
+  /* Accent colors (blue, purple, cyan as specified in requirements) */
+  --accent-blue: #0077cc;
+  --accent-purple: #9d4edd;
+  --accent-cyan: #00bcd4;
+  --accent-blue-hover: #0099ff;
+  --accent-purple-hover: #b66dff;
+  --accent-cyan-hover: #00e4ff;
+  
+  /* Other colors */
+  --border-color: #444444;
+  --shadow: rgba(0, 0, 0, 0.5);
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-xxl: 4rem;
+  
+  /* Typography */
+  --font-primary: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 1.875rem;
+  --font-size-3xl: 2.25rem;
+  --font-size-4xl: 3rem;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/* Modern sans-serif font stack */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 var(--spacing-sm) 0;
+  line-height: 1.2;
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+p {
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-blue-hover);
+}
+
+/* Layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--accent-blue);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--accent-blue-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-blue);
+  color: white;
+}
+
+.btn-purple {
+  background-color: var(--accent-purple);
+}
+
+.btn-purple:hover {
+  background-color: var(--accent-purple-hover);
+}
+
+.btn-cyan {
+  background-color: var(--accent-cyan);
+}
+
+.btn-cyan:hover {
+  background-color: var(--accent-cyan-hover);
+}
+
+/* Card styles */
+.card {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  box-shadow: 0 4px 6px var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px var(--shadow);
+}
+
+/* Section styling */
+section {
+  padding: var(--spacing-xxl) 0;
+}
+
+section:nth-child(even) {
+  background-color: var(--bg-secondary);
+}
+
+/* Navigation */
+nav {
+  padding: var(--spacing-md) 0;
+  position: sticky;
+  top: 0;
+  background-color: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-lg);
+}
+
+.nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--accent-blue);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-blue);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: var(--font-size-xl);
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 80vh;
+  padding: var(--spacing-xxl) 0;
+}
+
+.hero h1 {
+  margin-bottom: var(--spacing-md);
+}
+
+.hero p {
+  font-size: var(--font-size-lg);
+  max-width: 700px;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Button group */
+.btn-group {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Project grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px var(--shadow);
+    padding: var(--spacing-lg) 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-xl);
+  }
+}
