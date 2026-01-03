@@ -1,5 +1,0 @@
-This is a placeholder for your profile picture. To add your actual photo:
-
-1. Replace this file with your actual profile image (JPG, PNG, or WebP format)
-2. Name it "profile.jpg" (or update the reference in Home.jsx if using a different name)
-3. Recommended size: 300x300 pixels or larger for best quality
