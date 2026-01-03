@@ -17,13 +17,13 @@ const Header = () => {
   return (
     <nav>
       <div className="container nav-container">
-        <Link to="/" className="nav-logo" onClick={handleNavClick}>Salem G.</Link>
+        <Link to="/" className="nav-logo">Salem G. | Developer</Link>
         <ul className={`nav-menu ${mobileMenuOpen ? 'active' : ''}`}>
           <li><Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`} onClick={handleNavClick}>Home</Link></li>
           <li><Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} onClick={handleNavClick}>About</Link></li>
           <li><Link to="/services" className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`} onClick={handleNavClick}>Services</Link></li>
           <li><Link to="/projects" className={`nav-link ${location.pathname === '/projects' ? 'active' : ''}`} onClick={handleNavClick}>Projects</Link></li>
-          <li><Link to="/blog" className={`nav-link ${location.pathname === '/blog' ? 'active' : ''}`} onClick={handleNavClick}>Blog</Link></li>
+          <li><Link to="/blog" className={`nav-link ${location.pathname === '/blog' ? 'active' : ''}`} onClick={handleNavClick}>Insights</Link></li>
           <li><Link to="/resume" className={`nav-link ${location.pathname === '/resume' ? 'active' : ''}`} onClick={handleNavClick}>Resume</Link></li>
           <li><Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={handleNavClick}>Contact</Link></li>
         </ul>
