@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import profileImg from '/profile.jpg'; // Import the image
 
 const About = () => {
   return (
@@ -7,7 +8,7 @@ const About = () => {
         <h2>Professional Profile</h2>
         <div className="card">
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--spacing-lg)', marginBottom: 'var(--spacing-lg)', flexWrap: 'wrap' }}>
-            <img src={`/profile.jpg?v=${Date.now()}`} alt="Salem Gwashavanhu" className="profile-img" style={{ maxWidth: '200px', height: 'auto' }} />
+            <img src={profileImg} alt="Salem Gwashavanhu" className="profile-img" style={{ maxWidth: '200px', height: 'auto' }} />
             <div style={{ flex: 1 }}>
               <h3>Salem Gwashavanhu</h3>
               <p style={{ marginBottom: 'var(--spacing-sm)', color: 'var(--accent-green)' }}>E-commerce & Digital Solutions Developer</p>

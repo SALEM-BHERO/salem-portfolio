@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import profileImg from '/profile.jpg'; // Import the image
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
             </div>
           </div>
           <div className="hero-image">
-            <img src={`/profile.jpg?v=${Date.now()}`} alt="Salem Gwashavanhu" className="profile-img" />
+            <img src={profileImg} alt="Salem Gwashavanhu" className="profile-img" />
           </div>
         </div>
       </div>
