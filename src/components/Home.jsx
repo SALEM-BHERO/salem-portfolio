@@ -15,7 +15,7 @@ const Home = () => {
             </div>
           </div>
           <div className="hero-image">
-            <img src="/profile.jpg" alt="Salem Gwashavanhu" className="profile-img" />
+            <img src={`/profile.jpg?v=${Date.now()}`} alt="Salem Gwashavanhu" className="profile-img" />
           </div>
         </div>
       </div>
