@@ -64,23 +64,30 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Prepare the email data
+      const emailData = {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      };
       
-      // Here you would typically send the form data to your backend
-      // For now, we'll simulate success
-      console.log('Form submitted:', formData);
+      // Option 1: Open email client with pre-filled data
+      const mailtoLink = `mailto:sgwashavanhu55@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\n${formData.message}`)}`;
+      window.location.href = mailtoLink;
       
+      // Show success message
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       
       // Reset success message after 5 seconds
       setTimeout(() => {
         setSubmitSuccess(false);
+        setIsSubmitting(false);
       }, 5000);
     } catch (error) {
-      console.error('Error submitting form:', error);
-    } finally {
+      console.error('Error handling form submission:', error);
+      alert('There was an error sending your message. Please try using the "Open Gmail" button instead.');
       setIsSubmitting(false);
     }
   };
@@ -115,7 +122,7 @@ const Contact = () => {
                   borderRadius: '4px',
                   marginBottom: 'var(--spacing-md)'
                 }}>
-                  Your message has been sent successfully!
+                  Opening your email client to send the message...
                 </div>
               )}
               
