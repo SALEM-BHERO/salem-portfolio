@@ -64,17 +64,13 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Prepare the email data
-      const emailData = {
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message
-      };
-      
-      // Option 1: Open email client with pre-filled data
-      const mailtoLink = `mailto:sgwashavanhu55@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})\n\n${formData.message}`)}`;
-      window.location.href = mailtoLink;
+      // Create a temporary link element to trigger the mailto
+      const mailtoLink = document.createElement('a');
+      mailtoLink.href = `mailto:sgwashavanhu55@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})%0D%0A%0D%0A${formData.message}`)}`;
+      mailtoLink.style.display = 'none';
+      document.body.appendChild(mailtoLink);
+      mailtoLink.click();
+      document.body.removeChild(mailtoLink);
       
       // Show success message
       setSubmitSuccess(true);
@@ -87,7 +83,7 @@ const Contact = () => {
       }, 5000);
     } catch (error) {
       console.error('Error handling form submission:', error);
-      alert('There was an error sending your message. Please try using the "Open Gmail" button instead.');
+      alert('There was an error opening your email client. Please try using the "Open Gmail" button instead.');
       setIsSubmitting(false);
     }
   };
