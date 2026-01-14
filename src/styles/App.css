@@ -10,8 +10,8 @@
   --accent-blue-hover: #00aaff; /* Lighter blue for hover states */
   
   /* NEW ACCENT COLOR - Light Green instead of purple */
-  --accent-green: #4CAF50; /* Fresh, modern light green */
-  --accent-green-hover: #66BB6A; /* Lighter green for hover effects */
+  --accent-green: #2592db; /* Fresh, modern light green */
+  --accent-green-hover: #007bff; /* Lighter green for hover effects */
   
   /* Supporting Colors */
   --text-primary: #f8f9fa; /* Off-white for main text - easier on eyes */
@@ -205,6 +205,81 @@ a:hover {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 15px var(--shadow);
+}
+
+/* Contact section styling */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.contact-info h3,
+.contact-form h3 {
+  color: var(--accent-blue);
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-secondary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 2px solid var(--border-color);
+  border-radius: 4px;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  font-family: var(--font-primary);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #ff6b6b;
+}
+
+.error-message {
+  display: block;
+  color: #ff6b6b;
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-xs);
+  margin-bottom: 0;
+}
+
+.success-message {
+  background-color: var(--accent-green);
+  color: white;
+  padding: var(--spacing-sm);
+  border-radius: 4px;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+
+/* Responsive design for contact section */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
 }
 
 /* Section styling */

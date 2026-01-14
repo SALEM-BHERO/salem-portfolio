@@ -7,7 +7,6 @@ import Projects from './components/Projects';
 import Blog from './components/Blog';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
-import Newsletter from './components/Newsletter';
 import ParticleBackground from './components/ParticleBackground';
 
 function App() {
@@ -25,7 +24,6 @@ function App() {
             <Blog />
             <Resume />
             <Contact />
-            <Newsletter />
           </>
         } />
         <Route path="/about" element={<About />} />
@@ -34,7 +32,6 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/newsletter" element={<Newsletter />} />
       </Routes>
     </div>
   )
