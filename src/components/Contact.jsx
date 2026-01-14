@@ -10,6 +10,7 @@ const Contact = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [showFallback, setShowFallback] = useState(false);
 
   const validateForm = () => {
     const newErrors = {};
@@ -64,27 +65,54 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Create a temporary link element to trigger the mailto
-      const mailtoLink = document.createElement('a');
-      mailtoLink.href = `mailto:sgwashavanhu55@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`From: ${formData.name} (${formData.email})%0D%0A%0D%0A${formData.message}`)}`;
-      mailtoLink.style.display = 'none';
-      document.body.appendChild(mailtoLink);
-      mailtoLink.click();
-      document.body.removeChild(mailtoLink);
+      // Method 1: Try creating mailto link with DOM manipulation
+      const mailBody = `From: ${formData.name} (${formData.email})%0D%0A%0D%0A${formData.message}`;
+      const mailtoUrl = `mailto:sgwashavanhu55@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(mailBody)}`;
+      
+      // Create and click the link
+      const link = document.createElement('a');
+      link.href = mailtoUrl;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
       
       // Show success message
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       
-      // Reset success message after 5 seconds
+      // Reset states after delay
       setTimeout(() => {
         setSubmitSuccess(false);
         setIsSubmitting(false);
+        setShowFallback(false);
       }, 5000);
+      
     } catch (error) {
-      console.error('Error handling form submission:', error);
-      alert('There was an error opening your email client. Please try using the "Open Gmail" button instead.');
+      console.error('Error with mailto link:', error);
+      // Show fallback option
+      setShowFallback(true);
       setIsSubmitting(false);
+    }
+  };
+
+  const handleFallbackClick = () => {
+    // Alternative method using window.open
+    const mailBody = `From: ${formData.name} (${formData.email})%0D%0A%0D%0A${formData.message}`;
+    const mailtoUrl = `mailto:sgwashavanhu55@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(mailBody)}`;
+    
+    try {
+      window.open(mailtoUrl, '_self');
+    } catch (error) {
+      console.error('Window open failed:', error);
+      alert(`Please manually email sgwashavanhu55@gmail.com with the following information:
+
+Subject: ${formData.subject}
+
+From: ${formData.name} (${formData.email})
+
+Message:
+${formData.message}`);
     }
   };
 
@@ -110,6 +138,7 @@ const Contact = () => {
             
             <div className="contact-form">
               <h3>Send a Message</h3>
+              
               {submitSuccess && (
                 <div className="success-message" style={{
                   backgroundColor: '#4CAF50',
@@ -119,6 +148,26 @@ const Contact = () => {
                   marginBottom: 'var(--spacing-md)'
                 }}>
                   Opening your email client to send the message...
+                </div>
+              )}
+              
+              {showFallback && (
+                <div className="warning-message" style={{
+                  backgroundColor: '#ff9800',
+                  color: 'white',
+                  padding: 'var(--spacing-sm)',
+                  borderRadius: '4px',
+                  marginBottom: 'var(--spacing-md)',
+                  textAlign: 'center'
+                }}>
+                  <p>If your email client didn't open, click the button below:</p>
+                  <button 
+                    onClick={handleFallbackClick}
+                    className="btn btn-green"
+                    style={{ marginTop: 'var(--spacing-sm)' }}
+                  >
+                    Try Again to Open Email Client
+                  </button>
                 </div>
               )}
               
