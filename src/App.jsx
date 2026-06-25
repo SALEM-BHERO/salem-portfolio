@@ -11,8 +11,7 @@ import ParticleBackground from './components/ParticleBackground';
 
 function App() {
   return (
-    <div className="App">
-      <ParticleBackground />
+    <div className="App flex flex-col min-h-screen bg-background-light text-slate-900">
       <Header />
       <Routes>
         <Route path="/" element={
