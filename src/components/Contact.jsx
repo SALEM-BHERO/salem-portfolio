@@ -65,41 +65,35 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const mailBody = `From: ${formData.name} (${formData.email})%0D%0A%0D%0A${formData.message}`;
-      const mailtoUrl = `mailto:sgwashavanhu55@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(mailBody)}`;
+      const response = await fetch('https://formspree.io/f/xnjkdjle', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
       
-      const link = document.createElement('a');
-      link.href = mailtoUrl;
-      link.style.display = 'none';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
-      setSubmitSuccess(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      if (response.ok) {
+        setSubmitSuccess(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setShowFallback(true);
+    } finally {
+      setIsSubmitting(false);
       
       setTimeout(() => {
         setSubmitSuccess(false);
-        setIsSubmitting(false);
         setShowFallback(false);
       }, 5000);
-      
-    } catch (error) {
-      console.error('Error with mailto link:', error);
-      setShowFallback(true);
-      setIsSubmitting(false);
-    }
-  };
-
-  const handleFallbackClick = () => {
-    const mailBody = `From: ${formData.name} (${formData.email})%0D%0A%0D%0A${formData.message}`;
-    const mailtoUrl = `mailto:sgwashavanhu55@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(mailBody)}`;
-    
-    try {
-      window.open(mailtoUrl, '_self');
-    } catch (error) {
-      console.error('Window open failed:', error);
-      alert(`Please manually email sgwashavanhu55@gmail.com with your message.`);
     }
   };
 
@@ -153,16 +147,13 @@ const Contact = () => {
               {submitSuccess && (
                 <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6 flex items-center gap-3">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                  Opening your email client to send the message...
+                  Message sent successfully! I will get back to you soon.
                 </div>
               )}
               
               {showFallback && (
-                <div className="bg-amber-50 border border-amber-200 text-amber-700 px-4 py-3 rounded-lg mb-6 text-sm">
-                  <p className="mb-2">If your email client didn't open, click below:</p>
-                  <button onClick={handleFallbackClick} className="bg-amber-100 hover:bg-amber-200 text-amber-800 px-4 py-2 rounded font-medium transition-colors">
-                    Try Again
-                  </button>
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6 text-sm">
+                  <p>There was an error sending your message. Please try emailing me directly.</p>
                 </div>
               )}
               
