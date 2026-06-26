@@ -1,14 +1,7 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const location = useLocation();
-
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
-  };
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const activeLinkClass = "font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1";
