@@ -65,11 +65,9 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Method 1: Try creating mailto link with DOM manipulation
       const mailBody = `From: ${formData.name} (${formData.email})%0D%0A%0D%0A${formData.message}`;
       const mailtoUrl = `mailto:sgwashavanhu55@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(mailBody)}`;
       
-      // Create and click the link
       const link = document.createElement('a');
       link.href = mailtoUrl;
       link.style.display = 'none';
@@ -77,11 +75,9 @@ const Contact = () => {
       link.click();
       document.body.removeChild(link);
       
-      // Show success message
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       
-      // Reset states after delay
       setTimeout(() => {
         setSubmitSuccess(false);
         setIsSubmitting(false);
@@ -90,14 +86,12 @@ const Contact = () => {
       
     } catch (error) {
       console.error('Error with mailto link:', error);
-      // Show fallback option
       setShowFallback(true);
       setIsSubmitting(false);
     }
   };
 
   const handleFallbackClick = () => {
-    // Alternative method using window.open
     const mailBody = `From: ${formData.name} (${formData.email})%0D%0A%0D%0A${formData.message}`;
     const mailtoUrl = `mailto:sgwashavanhu55@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(mailBody)}`;
     
@@ -105,139 +99,154 @@ const Contact = () => {
       window.open(mailtoUrl, '_self');
     } catch (error) {
       console.error('Window open failed:', error);
-      alert(`Please manually email sgwashavanhu55@gmail.com with the following information:
-
-Subject: ${formData.subject}
-
-From: ${formData.name} (${formData.email})
-
-Message:
-${formData.message}`);
+      alert(`Please manually email sgwashavanhu55@gmail.com with your message.`);
     }
   };
 
   return (
-    <section id="contact">
-      <div className="container">
-        <h2>Get In Touch</h2>
-        
-        <div className="card">
-          <div className="contact-content">
-            <div className="contact-info">
-              <h3>Contact Information</h3>
-              <p><strong>Email:</strong> <a href="mailto:sgwashavanhu55@gmail.com">sgwashavanhu55@gmail.com</a></p>
-              <p><strong>Phone:</strong> +263 78 278 6864</p>
-              <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/salem-gwashavanhu/" target="_blank" rel="noopener noreferrer">Salem Gwashavanhu</a></p>
-              <p>I'm always interested in discussing new opportunities, collaborations, and projects. Whether you have a question or just want to say hi, feel free to reach out!</p>
+    <main className="flex-1 w-full bg-slate-50 py-12 lg:py-24">
+      <div className="container-custom">
+        <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
+          <div className="grid grid-cols-1 md:grid-cols-5 h-full">
+            
+            {/* Bio / Contact Info Side */}
+            <div className="md:col-span-2 bg-primary text-white p-8 lg:p-12 flex flex-col justify-between">
+              <div>
+                <h2 className="text-3xl font-black mb-6">Let's connect</h2>
+                <p className="text-primary-100 mb-8 leading-relaxed text-sm">
+                  I'm a Developer specialized in digital products and e-commerce platforms. 
+                  My philosophy is that good technology should seamlessly solve business problems, 
+                  whether that's increasing conversions, streamlining operations, or opening new digital avenues.
+                </p>
+                
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <svg className="w-6 h-6 text-white shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    <div>
+                      <span className="block text-xs font-bold uppercase tracking-wider text-primary-200 mb-1">Email</span>
+                      <a href="mailto:sgwashavanhu55@gmail.com" className="hover:underline">sgwashavanhu55@gmail.com</a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <svg className="w-6 h-6 text-white shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                    <div>
+                      <span className="block text-xs font-bold uppercase tracking-wider text-primary-200 mb-1">Phone</span>
+                      <span>+263 78 278 6864</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <svg className="w-6 h-6 text-white shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    <div>
+                      <span className="block text-xs font-bold uppercase tracking-wider text-primary-200 mb-1">Resume</span>
+                      <a href="#" className="hover:underline font-bold text-white flex items-center gap-1">Download CV <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
               
-              <div className="btn-group" style={{marginTop: 'var(--spacing-lg)'}}>
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sgwashavanhu55@gmail.com" target="_blank" rel="noopener noreferrer" className="btn">Open Gmail</a>
-                <a href="https://www.linkedin.com/in/salem-gwashavanhu/" target="_blank" rel="noopener noreferrer" className="btn btn-green">Connect on LinkedIn</a>
+              <div className="mt-12 flex gap-4">
+                 <a href="https://www.linkedin.com/in/salem-gwashavanhu/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                   <span className="sr-only">LinkedIn</span>
+                   <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                 </a>
               </div>
             </div>
-            
-            <div className="contact-form">
-              <h3>Send a Message</h3>
+
+            {/* Form Side */}
+            <div className="md:col-span-3 p-8 lg:p-12">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Send me a message</h3>
               
               {submitSuccess && (
-                <div className="success-message" style={{
-                  backgroundColor: '#4CAF50',
-                  color: 'white',
-                  padding: 'var(--spacing-sm)',
-                  borderRadius: '4px',
-                  marginBottom: 'var(--spacing-md)'
-                }}>
+                <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6 flex items-center gap-3">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                   Opening your email client to send the message...
                 </div>
               )}
               
               {showFallback && (
-                <div className="warning-message" style={{
-                  backgroundColor: '#ff9800',
-                  color: 'white',
-                  padding: 'var(--spacing-sm)',
-                  borderRadius: '4px',
-                  marginBottom: 'var(--spacing-md)',
-                  textAlign: 'center'
-                }}>
-                  <p>If your email client didn't open, click the button below:</p>
-                  <button 
-                    onClick={handleFallbackClick}
-                    className="btn btn-green"
-                    style={{ marginTop: 'var(--spacing-sm)' }}
-                  >
-                    Try Again to Open Email Client
+                <div className="bg-amber-50 border border-amber-200 text-amber-700 px-4 py-3 rounded-lg mb-6 text-sm">
+                  <p className="mb-2">If your email client didn't open, click below:</p>
+                  <button onClick={handleFallbackClick} className="bg-amber-100 hover:bg-amber-200 text-amber-800 px-4 py-2 rounded font-medium transition-colors">
+                    Try Again
                   </button>
                 </div>
               )}
               
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="name">Name *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className={errors.name ? 'error' : ''}
-                  />
-                  {errors.name && <span className="error-message">{errors.name}</span>}
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-bold text-slate-700 mb-1">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors ${errors.name ? 'border-red-500 bg-red-50' : 'border-slate-300 bg-slate-50'}`}
+                      placeholder="Jane Doe"
+                    />
+                    {errors.name && <span className="text-xs text-red-500 mt-1 block">{errors.name}</span>}
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-bold text-slate-700 mb-1">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors ${errors.email ? 'border-red-500 bg-red-50' : 'border-slate-300 bg-slate-50'}`}
+                      placeholder="jane@example.com"
+                    />
+                    {errors.email && <span className="text-xs text-red-500 mt-1 block">{errors.email}</span>}
+                  </div>
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="email">Email *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={errors.email ? 'error' : ''}
-                  />
-                  {errors.email && <span className="error-message">{errors.email}</span>}
-                </div>
-                
-                <div className="form-group">
-                  <label htmlFor="subject">Subject *</label>
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-bold text-slate-700 mb-1">Subject</label>
                   <input
                     type="text"
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className={errors.subject ? 'error' : ''}
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors ${errors.subject ? 'border-red-500 bg-red-50' : 'border-slate-300 bg-slate-50'}`}
+                    placeholder="Project Inquiry"
                   />
-                  {errors.subject && <span className="error-message">{errors.subject}</span>}
+                  {errors.subject && <span className="text-xs text-red-500 mt-1 block">{errors.subject}</span>}
                 </div>
                 
-                <div className="form-group">
-                  <label htmlFor="message">Message *</label>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-bold text-slate-700 mb-1">Message</label>
                   <textarea
                     id="message"
                     name="message"
                     rows="5"
                     value={formData.message}
                     onChange={handleChange}
-                    className={errors.message ? 'error' : ''}
+                    className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-colors resize-none ${errors.message ? 'border-red-500 bg-red-50' : 'border-slate-300 bg-slate-50'}`}
+                    placeholder="Tell me about your project..."
                   ></textarea>
-                  {errors.message && <span className="error-message">{errors.message}</span>}
+                  {errors.message && <span className="text-xs text-red-500 mt-1 block">{errors.message}</span>}
                 </div>
                 
                 <button 
                   type="submit" 
-                  className="btn btn-green" 
                   disabled={isSubmitting}
-                  style={{ marginTop: 'var(--spacing-md)' }}
+                  className="w-full bg-slate-900 hover:bg-primary text-white font-bold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
                 >
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                  {isSubmitting ? 'Processing...' : 'Send Message'}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </button>
               </form>
             </div>
+            
           </div>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 
